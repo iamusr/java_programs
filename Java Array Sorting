@@ -1,0 +1,57 @@
+/*This is an Arrays program in Java, I explored how an array is declared and gave an array size to enter elements into it,
+It contains inserting elements into an array
+It contains retrieving elements from the array
+the smallest numbers in the array,
+the largest number in the array
+sorting of an array
+retrieving elements after sorting*/
+
+import java.util.Scanner;
+import java.util.Arrays;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int[] numbers;
+        System.out.println("Enter size of array: ");
+        int n = sc.nextInt();
+        numbers = new int[n];
+        System.out.println("Enter integers in array: ");
+        for(int i=0;i<n;i++)
+        {
+            numbers[i] = sc.nextInt();
+        }
+        System.out.println("Here are the list of Ingeters that you entered: ");
+    
+        int small = numbers[0];
+        int large = numbers[0];
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(numbers[i]+" ");
+            
+            if(numbers[i]<small)
+            {
+                small = numbers[i];
+            }
+            if(numbers[i]>large)
+            {
+                large = numbers[i];
+            }
+            
+        }
+        System.out.println(" ");
+        System.out.println("Smallest numbers in the array is: "+small);
+        System.out.println("Smallest numbers in the array is: "+large);
+        Arrays.sort(numbers);
+        System.out.println("Sorting of Array: "+Arrays.toString(numbers));
+        System.out.println("----------------------------------------------");
+        for(int i=0;i<n;i++)
+        {
+            System.out.println(numbers[i]);
+            System.out.println(((Object)numbers[i]).getClass().getSimpleName());
+        }
+        sc.close();
+        
+    }
+}
