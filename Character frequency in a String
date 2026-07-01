@@ -1,0 +1,25 @@
+import java.util.*;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        String str=sc.nextLine();
+        HashMap<Character,Integer> cf = new HashMap<>();
+        sc.close();
+        for(int i=0;i<str.length();i++)
+        {
+            if(cf.containsKey(str.charAt(i)))
+            {
+                cf.put(str.charAt(i),cf.get(str.charAt(i))+1);
+            }
+            else{
+                cf.put(str.charAt(i),1);
+            }
+        }
+        for(Map.Entry<Character,Integer> x: cf.entrySet())
+        {
+            System.out.println(x.getKey()+" "+x.getValue());
+        }
+    }
+}
