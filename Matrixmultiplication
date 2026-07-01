@@ -1,0 +1,70 @@
+
+import java.util.*;
+public class Matrixmultiplication
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int r1,c1,r2,c2,sum=0;
+        System.out.println("Enter rows and columns for M1:");
+        r1 = sc.nextInt();
+        c1 = sc.nextInt();
+        int[][] m1 = new int[r1][c1];
+        System.out.println("Enter rows and columns for M2:");
+        r2=sc.nextInt();
+        c2=sc.nextInt();
+        int[][] m2 = new int[r2][c2];
+        
+        if(c1==r2)
+        {
+            int[][] m3 = new int[r1][c2];
+            System.out.println("Enter elements for M1");
+            for(int i=0;i<r1;i++)
+            {
+                for(int j=0;j<c1;j++)
+                {
+                    m1[i][j] = sc.nextInt();
+                }
+                
+            }
+            System.out.println("Enter elements for M2");
+            for(int i=0;i<r2;i++)
+            {
+                for(int j=0;j<c2;j++)
+                {
+                    m2[i][j] = sc.nextInt();
+                }
+                
+            }
+            sc.close();
+            for(int i = 0; i < r1; i++)
+            {
+                for(int j = 0; j < c2; j++)
+                {
+                    sum = 0;
+
+                    for(int k = 0; k < c1; k++)
+                    {
+                        sum = sum + m1[i][k] * m2[k][j];
+                    }
+
+                    m3[i][j] = sum;
+                }
+            }
+            System.out.println("Resultant matrix M3:");
+            for(int i=0;i<r1;i++)
+            {
+                for(int j=0;j<c2;j++)
+                {
+                    System.out.printf("%6d",m3[i][j]);
+                }
+                System.out.println();
+            }
+
+        }
+        else
+        {
+            System.out.println("Matrix multiplication not possible.");
+        }
+    }
+}
