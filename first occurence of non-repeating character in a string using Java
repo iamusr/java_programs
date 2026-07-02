@@ -1,0 +1,53 @@
+import java.util.*;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        HashMap<Character,Integer> cf = new HashMap<>();
+        String str = sc.nextLine();
+        sc.close();
+        str=str.trim();
+        boolean found=false;
+        if(str.length()==0)
+        {
+            System.out.println();
+            found=true;
+        }
+        else if(str.length()==1)
+        {
+            System.out.println(str);
+            found=true;
+        }
+        else 
+        {
+            for(int i=0;i<str.length();i++)
+            {
+                if(cf.containsKey(str.charAt(i)))
+                {
+                    cf.put(str.charAt(i),cf.get(str.charAt(i))+1);
+                }   
+                else 
+                {
+                    cf.put(str.charAt(i),1);
+                }
+            }
+            for(Map.Entry<Character,Integer> x: cf.entrySet())
+            {
+                if(x.getValue()==1)
+                {
+                    System.out.println(x.getKey());
+                    found=true;
+                    break;
+                }
+            }
+            
+        }
+        if(!found)
+        {
+            System.out.println("Doesn't exist");
+        }
+        
+    }
+    
+}
