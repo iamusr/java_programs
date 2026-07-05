@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        sc.close();
+
+        if (str.length() != 2) 
+        {
+            System.out.println("Invalid input");
+            return;
+        }
+
+        int c = str.charAt(0);
+        int r = str.charAt(1) - '0';
+
+        if (str.charAt(0) >= 'a' && str.charAt(0) <= 'h' && r >= 1 && r <= 8) 
+        {
+
+            System.out.println((c + r) % 2 == 0 ? "Black" : "White");
+        } 
+        else 
+        {
+            System.out.println("This is not a square of Chess Board");
+        }
+    }
+}
