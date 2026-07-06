@@ -1,0 +1,19 @@
+import java.util.*;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        char ch = sc.next().charAt(0);
+        sc.close();
+        
+        if(ch>='a' && ch<='z')
+        { 
+            System.out.println((char)(ch-32));
+        }
+        else
+        { 
+            System.out.println("Enter a Lower Case character");
+        }
+    }
+}
