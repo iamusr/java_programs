@@ -8,14 +8,25 @@ public class Main
         int r = sc.nextInt();
         sc.close();
         int ft=0,st=1,tt=0; //1st term, 2nd term, 3rd term
-        System.out.print(ft+" "+st+" ");
-        for(int i=1+2;i<=r;i++)
+        if(r<0)
+            System.out.println("Enter positive number");
+        else if(r==0)
+            System.out.println();
+        else if(r==1)
+            System.out.println(ft);
+        else if(r==2)
+            System.out.println(ft+" "+st);
+        else
         {
-            tt = ft+st;
-            System.out.print(tt+" ");
-            ft = st;
-            st = tt;
-        }
-        System.out.println();
+            System.out.print(ft+" "+st+" ");
+            for(int i=1+2;i<=r;i++)
+            {
+                tt = ft+st;
+                System.out.print(tt+" ");
+                ft = st;
+                st = tt;
+            }
+            System.out.println();
+        }        
     }
 }
