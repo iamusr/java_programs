@@ -15,7 +15,7 @@ public class Main
         else if(t==1)
             System.out.println(ft);
         else if(t==2)
-            System.out.println(ft+" "+st);
+            System.out.println(st);
         else
         {
             c=3;
