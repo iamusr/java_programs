@@ -16,5 +16,6 @@ public class Main
             ft = st;
             st = tt;
         }
+        System.out.println();
     }
 }
