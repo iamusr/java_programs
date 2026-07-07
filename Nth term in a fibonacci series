@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter term to print:");
+        int t = sc.nextInt();
+        sc.close();
+        int ft=0,st=1,tt=0,c; //1st term, 2nd term, 3rd term
+        if(t<0)
+            System.out.println("Enter positive number");
+        else if(t==0)
+            System.out.println();
+        else if(t==1)
+            System.out.println(ft);
+        else if(t==2)
+            System.out.println(ft+" "+st);
+        else
+        {
+            c=3;
+            while(c<=t)
+            {
+                tt = ft+st;
+                ft = st;
+                st = tt;
+                c=c+1;
+            }
+            System.out.println(tt);
+        }        
+    }
+}
