@@ -1,0 +1,310 @@
+1. Create an ArrayList<Integer> and add 10 numbers. Display all elements.
+
+import java.util.*;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> al = new ArrayList<>();
+        int n = sc.nextInt();
+        
+        for(int i=0;i<n;i++)
+        {
+            int x = sc.nextInt();
+            al.add(x);
+        }
+        System.out.println(al);
+    }
+}
+
+2. Read 5 student names into an ArrayList<String> and print them.
+
+import java.util.*;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<String> names = new ArrayList<>();
+            //int n = sc.nextInt();
+            //sc.nextLine();
+        int n = Integer.parseInt(sc.nextLine());
+        for(int i=0;i<n;i++)
+        {
+            String x = sc.nextLine();
+            names.add(x);
+        }
+        System.out.println(names);
+    }
+}
+
+3. Find the size of an ArrayList.
+
+import java.util.*;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        ArrayList<Integer> nums = new ArrayList<>();
+        nums.add(1);
+        nums.add(2);
+        nums.add(3);
+        nums.add(23);
+
+
+        System.out.println("Size of ArrayList is:"+nums.size());
+    }
+}
+
+
+4. Retrieve and display the first and last elements of an ArrayList.
+
+import java.util.*;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        ArrayList<String> nums = new ArrayList<>();
+        nums.add("abc");
+        nums.add("def");
+        nums.add("ghi");
+        nums.add("jkl");
+        nums.add("mno");
+
+        System.out.println("firstElement: "+nums.get(0));
+        System.out.println("lastElement: "+nums.get(nums.size()-1));
+    }
+}
+
+
+5. Update the third element of an ArrayList.
+
+import java.util.*;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        ArrayList<String> nums = new ArrayList<>();
+        nums.add("abc");
+        nums.add("def");
+        nums.add("ghi");
+        nums.add("jkl");
+        nums.add("mno");
+        System.out.println(nums);
+        System.out.println(nums.get(2));
+        nums.set(2,"uma");
+        System.out.println(nums);
+        System.out.println(nums.get(2));
+    }
+}
+
+6. Remove a specific element from an ArrayList
+
+import java.util.*;
+import java.lang.String;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<String> al = new ArrayList<>();
+        al.add("abc");
+        al.add("def");
+        al.add("ghi");
+        al.add("jkl");
+
+        System.out.println(al);
+        System.out.println("Enter which element u want to remove:");
+        String f = sc.nextLine();
+        int v=-1;
+        for(int i=0;i<al.size();i++)
+        {
+            String temp = al.get(i);
+            if(temp.equals(f))
+            {
+                v  = i;
+            }
+        }
+        al.remove(v);
+        
+        System.out.println(al);
+    }
+}
+
+7. Check whether an element exists in an ArrayList
+
+import java.util.*;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<String> str = new ArrayList<>();
+        ArrayList<Integer> indexs = new ArrayList<>();
+        int flag =0;
+        str.add("learn");
+        str.add("java");
+        str.add("code");
+        str.add("java");
+        str.add("program");
+
+        System.out.println("Enter what to find: ");
+        String f = sc.nextLine();
+        for(int i=0;i<str.size()-1;i++) 
+        {   
+            if(f.equals(str.get(i)))
+            {
+                indexs.add(i);
+            }
+        }
+        if(indexs.isEmpty())
+        {
+            System.out.println("Doesn't Exist");
+        }
+        else 
+        {
+            System.out.println("Exist at: "+indexs);
+        }
+        sc.close();
+    }
+}
+
+
+8. Display all elements using: for loop, enhanced for loop, iterator
+
+import java.util.*;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        ArrayList<String> strs = new ArrayList<>();
+        strs.add("I");
+        strs.add("am");
+        strs.add("programming");
+        strs.add("in Java");
+
+        //using for loop
+        for(int i=0;i<strs.size();i++)
+        {
+            System.out.print(strs.get(i)+" ");
+        }
+        System.out.println();
+        
+        //using for-each loop
+        for(String s : strs)
+        {
+            System.out.print(s+" ");
+        }
+        System.out.println();
+        
+        //using iterator
+        Iterator<String> o = strs.iterator();
+
+        while(o.hasNext())
+        {
+            System.out.print(o.next()+" ");
+        }
+        System.out.println();
+
+        //forEach() with lambda
+        strs.forEach(x->System.out.print(x+" "));
+        System.out.println();
+    }
+}
+
+
+
+9. Reverse an ArrayList
+
+import java.util.*;
+import java.lang.String;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<String> al = new ArrayList<>();
+        al.add("abc");
+        al.add("def");
+        al.add("ghi");
+        al.add("jkl");
+
+        System.out.println(al);
+        
+        ArrayList<String> rev = new ArrayList<>();
+
+        for(int i = (al.size())-1;i>=0;i--)
+        {
+            String x = al.get(i);
+            rev.add(x);
+        }
+        System.out.println(rev);
+    }
+}
+
+
+10. Sort an ArrayList in ascending order.
+
+import java.util.*;
+import java.lang.String;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> al = new ArrayList<>();
+        al.add(23);
+        al.add(100);
+        al.add(1);
+        al.add(64);
+        al.add(-23);
+
+        System.out.println(al);
+        
+        ArrayList<Integer> asc = new ArrayList<>(al);
+
+        Collections.sort(asc);
+
+        System.out.println(asc);
+    }
+}
+
+Without using method
+import java.util.*;
+import java.lang.String;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> al = new ArrayList<>();
+        al.add(23);
+        al.add(100);
+        al.add(1);
+        al.add(1);
+        al.add(64);
+        al.add(-23);
+        al.add(-23);
+        al.add(-25);
+        System.out.println(al);
+        
+        for(int i=0;i<al.size();i++)
+        {
+            for(int j=0;j<al.size()-1;j++)
+            {
+                if(al.get(i)<al.get(j))
+                {
+                    int temp = al.get(i);
+                    al.set(i,al.get(j));
+                    al.set(j,temp);
+                }
+            }
+            
+        }
+        System.out.println(al);       
+        
+    }
+}
+
+
